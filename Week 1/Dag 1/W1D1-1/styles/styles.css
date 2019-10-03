@@ -1,0 +1,122 @@
+body {
+  display:grid;
+
+    grid-template-areas: 
+    " c m "
+    
+}
+
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  margin: 10px; 
+  margin-bottom: 1px; 
+  padding: 0px; 
+}
+
+h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.459);
+  margin: 10px; 
+  margin-top: 1px; 
+  padding: 0px; 
+}
+
+p { 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  margin: 15px 10px 15px 10px; 
+  padding: 0px; 
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(12, 12, 12, 0.226); 
+
+}
+
+h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  color: rgba(37, 245, 18, 0.952);
+  border-style: solid; 
+  border-width: 2px; 
+  border-color: rgba(37, 245, 18, 0.952);
+  border-radius: 4px;
+  border-right: 0px;
+  margin: 10px; 
+  margin-right: 0px; 
+  padding: 12px; 
+  width: 100px; 
+  float: left; 
+}
+
+h4 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  color: rgba(245, 18, 18, 0.952);
+  border-style: solid; 
+  border-width: 2px; 
+  border-color: rgba(245, 18, 18, 0.952);
+  border-radius: 4px;
+  margin: 10px; 
+  margin-left: 0px;
+  padding: 12px; 
+  width: 100px; 
+  float: right; 
+}
+
+img { 
+  display: block;
+  margin-left: auto; 
+  margin-right: 20px; 
+  margin-top: 20px; 
+  margin-bottom: 20px;
+
+}
+
+
+.Carla { 
+  grid-area: c;
+  border-style: solid; 
+  border-width: 2px; 
+  border-color: rgba(0, 0, 0, 0.205);
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: auto;
+  width: 320px; 
+
+
+
+}
+
+.Marijn {
+  grid-area: m;
+  border-style: solid; 
+  border-width: 2px; 
+  border-color: rgba(0, 0, 0, 0.205);
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: 5px; 
+  width: 320px;
+ }
+
+
+
+header {
+  grid-area: h;
+  background-color: lightblue;
+}
+
+main {
+  grid-area: m;
+  background-color: lightgoldenrodyellow;
+}
+
+section.sidebar {
+  grid-area: s;
+  background-color: lightsalmon;
+}
+
+footer {
+  grid-area: f;
+  background-color: lightcyan;
+}
