@@ -1,0 +1,63 @@
+body{
+    margin:0px;
+}
+
+.closed {
+    visibility: hidden;
+}
+
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;  
+    max-width: 200px;   
+}
+
+li{
+    border-style: solid;
+    border-color: black;
+    margin: 0px; 
+    padding: 10px;
+    text-align: center;
+
+}
+
+#groen{
+    background-color: green;
+}
+
+#geel{
+    background-color: gold;
+}
+
+#rood{
+    background-color: red;
+}
+
+#paars{
+    background-color: purple;
+}
+
+#oranje{
+    background-color: orangered;
+}
+
+.bgroen{
+    background-color: green;
+}
+
+.bgeel{
+    background-color: gold;
+}
+
+.brood{
+    background-color: red;
+}
+
+.bpaars{
+    background-color: purple;
+}
+
+.boranje{
+    background-color: orangered;
+}
