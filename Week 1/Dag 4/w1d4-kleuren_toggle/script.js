@@ -1,4 +1,6 @@
-
+document.addEventListener('DOMContentLoaded', function (event) {
+    const words = ['programmeren', 'javascript', 'slack', 'tutorials', 'github', 'samenwerken',
+    'studeren', 'browser', 'terminal'];
 
 const menu= document.getElementById('menu');
 const list= document.getElementById('list');
@@ -62,3 +64,5 @@ oranje.addEventListener('click', function(){
 
 //probleem: de rij alle kleuren afgaan gaat goed, maar als je weer
 //naar boven gaat niet. 
+
+});
