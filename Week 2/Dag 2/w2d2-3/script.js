@@ -104,7 +104,22 @@ const superheroes = [
     }
   ];
 
-  const superheroNames = superheroes.map((hero) =>{
+
+
+const superheroNames = superheroes.map(function(hero){
+    return hero.name; 
+});
+console.log(superheroNames);
+
+const weight = function(hero){
+    return hero.weight < 190; 
+};
+
+const lightWeight = superheroes.filter(weight);
+console.log(lightWeight);
+
+
+  /*const superheroNames = superheroes.map((hero) =>{
       return hero.name;
   });
   console.log(superheroNames);
@@ -176,4 +191,4 @@ const heavyHero = filteredHeroes.reduce(function(previous, current){
         return current;
     };
 });
-console.log(heavyHero);
+console.log(heavyHero);*/
