@@ -1,4 +1,4 @@
-//document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function (event) {
 
    const movies = [
       {
@@ -247,40 +247,149 @@
         "Poster": "https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
       }
     ];
-    //movies.imdbID 
-    /*Lijst van posters maken als img. Zoals hieronder moeten alle posters worden.
     
-    
-
-slides.forEach(function(slide) {
-  str += '<li>'+ slide + '</li>';
-}); 
-
-str += '</ul>';
-document.getElementById("slideContainer").innerHTML = str;
+    /*Lijst van posters, die er in html zo uit moet zien:    
 <li><a href="https://www.imdb.com/title/tt0944947/">
-    <img src="https://m.media-a.jpg" height="75px"/>titel film</a><li/>*/
+    <img src="url" height="175px"/>titel film</a><li/>*/
+   
+const list = document.getElementById("posters");
 
-//array poster links
-const posterUrl = movies.map((link) => link.Poster);
+let posters = '<div class="posters">';
 
-// De imbd sites
-const imbd = movies.map((code)=>{
-    return 'https://www.imdb.com/title/' + code.imdbID + '/';
+posters += movies.reduce((prev, current)=>{
+    return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+
+posters += '</div>';
+list.innerHTML = posters; 
+
+//filters. De onderste moeten met 1 kunnen, maar ben er nog niet uit..
+const nieuwsteFilms = movies.filter((year)=> year.Year >= 2014);
+const avengersFilms = movies.filter((film)=>film.Title.includes("Avengers"));
+const xmenFilms = movies.filter((film)=>film.Title.includes("X-Men"));
+const princessFilms = movies.filter((film)=>film.Title.includes("Princess"));
+const batmanFilms = movies.filter((film)=>film.Title.includes("Batman"));
+
+//lijsten gefilterde html
+let nieuw = '<div class="posters">';
+nieuw += nieuwsteFilms.reduce((prev, current)=>{
+  return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+nieuw += '</div>';
+
+let avenger = '<div class="posters">';
+avenger += avengersFilms.reduce((prev, current)=>{
+  return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+avenger += '</div>';
+
+let xMen = '<div class="posters">';
+xMen += xmenFilms.reduce((prev, current)=>{
+  return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+xMen += '</div>';
+
+let princess = '<div class="posters">';
+princess += princessFilms.reduce((prev, current)=>{
+  return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+princess += '</div>';
+
+let batman = '<div class="posters">';
+batman += batmanFilms.reduce((prev, current)=>{
+  return prev + `<div class= "poster"><a href="https://www.imdb.com/title/${current.imdbID}/">
+    <img src="${current.Poster}" height="175px"/></a><h1>${current.Title}</h1></div>`;
+}, " ");
+batman += '</div>';
+
+//const nieuwsteButton = document.getElementById("nieuwste")
+const nieuwsteButton = document.getElementById("nieuwste");
+const avengersButton = document.getElementById("avengers");
+const xmenButton = document.getElementById("xMen");
+const princessButton = document.getElementById("princess");
+const batmanButton = document.getElementById("batman");
+const allButton = document.getElementById("all");
+
+//functies knoppen
+nieuwsteButton.addEventListener('click', (event)=>{
+  list.innerHTML = nieuw;   
 });
 
-let posters = '<ul>';
-
-posterUrl.forEach((url)=>{
-    poster += '<li><a href="' +  
+avengersButton.addEventListener('click', (event)=>{
+  list.innerHTML = avenger;   
 });
 
-poster += '</ul>';
+xmenButton.addEventListener('click', (event)=>{
+  list.innerHTML = xMen;   
+});
 
+princessButton.addEventListener('click', (event)=>{
+  list.innerHTML = princess;   
+});
+
+batmanButton.addEventListener('click', (event)=>{
+  list.innerHTML = batman;   
+});
+
+allButton.addEventListener('click', (event)=>{
+  list.innerHTML = posters;   
+});
+
+
+//Hieronder alleen aantekeningen en oude code die niet werkte (wil ik bewaren om van te leren)
+
+//Filters moeten in het html element filteren, niet in de array (denk ik).
+//of ook in de html string class toevoegen van de naam? En dan met class includes de html filteren?
+//nee, filteren moet wel hier gebeuren want niet alle gegevens gaan mee naar de html. Maar hoe beinvloed ik die 
+//dan als ik alleen de lijst van array data heb? Filter zorgt voor nieuw array. Dus dan de innerhtml aanpassen zodat 
+//alleen de data uit dat array gebruikt wordt? Dus hide list, en show de alt. list. Dan moet ik dus voor elke filter een eigen 
+//lijst maken. En dan in de knop functie ene hiden en andere displayen. hide de div met id posters.
+//hoef niet te hiden, gewoon wisselen van list.innerhtml= en dan de alt lijst die ik heb gemaakt!
+
+/*Alternatief filters met not includes. 
+const nieuwsteFilms = movies.filter((year)=> !year.Year >= 2014);
+const avengersFilms = movies.filter((avengers)=>!avengers.Title.includes("Avengers"));
+const xmenFilms = movies.filter((xmen)=>!xmen.Title.includes("X-Men"));
+const princessFilms = movies.filter((princess)=>!princess.Title.includes("Princess"));
+const batmanFilms = movies.filter((batman)=>!batman.Title.includes("Batman"));*/
+
+//filters aan knoppen koppelen. 
+// met class toggle? 
+
+
+/*nieuwsteButton.addEventListener('click', (event)=>{
+  console.log(event);
+  if (event.checked = true){
+    nieuwsteFilms.forEach((poster)=>{
+      poster.style.display = "none";
+      console.log(event);
+    })
+  } else {nieuwsteFilms.forEach((poster)=>{
+    poster.style.display = "block";
+    });
+
+  };
+});*/
+
+
+
+
+
+/*nieuwsteButton.addEventListener('click', function(){
+  if (nieuwsteButton.checked = true){
+    nieuwsteFilms.forEach((poster)=>{
+       poster.style.display = "none"}); 
+  }  else {nieuwsteFilms.forEach((poster)=>{
+    poster.style.display = "block"})
+  };
+  }); */ 
   
-  
 
 
 
-
-//});
+});
