@@ -1,9 +1,7 @@
-function findNeedle(words) {
-   const lenghtNeedle = words.indexOf('needle');
+function findNeedle(words, word) {
+   const lenghtNeedle = words.indexOf(word);
    return lenghtNeedle; 
-   const  lenghtPlant = words.indexOf('plant');
-    return lenghtPlant; 
-};
+  };
 
 
 
