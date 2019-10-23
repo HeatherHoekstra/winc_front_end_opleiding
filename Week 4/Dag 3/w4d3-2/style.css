@@ -1,0 +1,31 @@
+.hover:hover {
+  color: lightblue;
+}
+
+.active:active {
+  color: red;
+}
+
+.visited:visited {
+  color: yellow;
+}
+
+.focus:focus {
+  color: purple;
+}
+
+.d1:hover {
+  color: lightblue;
+}
+
+.d2:active {
+  color: red;
+}
+
+.d3:visited {
+  color: yellow;
+}
+
+.d4:focus {
+  color: purple;
+}
